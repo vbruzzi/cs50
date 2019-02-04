@@ -1,3 +1,5 @@
+//prints out a pyramid made with #
+
 #include <cs50.h>
 #include <stdio.h>
 

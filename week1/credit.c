@@ -1,3 +1,5 @@
+//Checks if the credit card number is valid
+
 #import <stdio.h>
 #import <cs50.h>
 #import <math.h>

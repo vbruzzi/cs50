@@ -1,3 +1,5 @@
+//Bruteforces a a password that is up to 5 characters long
+
 #include <stdio.h>
 #include <string.h>
 #include <crypt.h>

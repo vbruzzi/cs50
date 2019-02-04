@@ -1,3 +1,5 @@
+//Implements a vigenere cipher that accepts a string as a keyword
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
