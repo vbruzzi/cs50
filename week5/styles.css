@@ -1,0 +1,33 @@
+.mainColor {
+    color: #88387c !important;
+}
+
+
+.index-page {
+    background: #070213 url("./background.jpg") no-repeat center !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+}
+
+.media {
+    margin-top: 180px !important;
+    max-width: 960px;
+    margin: auto;
+}
+
+.media-body {
+    margin-top: 75px;
+}
+
+.list-inline {
+    margin-top: 50px;
+}
+
+.fa {
+    color: black;
+    font-size: 3rem;
+}
+
+.fa:hover {
+    color: #88387c;
+}
