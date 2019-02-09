@@ -16,3 +16,11 @@ week3 contains whodunit.c, that modifies the colors in a BMP to reveal a hidden 
 ### Week 4
 
 week4 contains dictionary.c, which puts a dictionary in a hash table and spell checks txt files.
+
+### Week 5
+
+week5 contains my portfolio with skills, courses & certifications, projects, and others, made using bootstrap, CSS3 and HTML5.
+
+### Week 6
+
+week 6 contains mario.py, hello.py, credit.py, crack.py, crack2.py and bleep.py. The first 5 are Python versions of previous C projects (crack has a direct port of the C code and a different Pythonic implementation in crack2). Bleep censors words that are in a censor file (.txt).
