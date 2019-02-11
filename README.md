@@ -24,3 +24,7 @@ week5 contains my portfolio with skills, courses & certifications, projects, and
 ### Week 6
 
 week 6 contains mario.py, hello.py, credit.py, crack.py, crack2.py and bleep.py. The first 5 are Python versions of previous C projects (crack has a direct port of the C code and a different Pythonic implementation in crack2). Bleep censors words that are in a censor file (.txt).
+
+### Week 7
+
+week7 contains similarities, a website that takes 2 files from the user and compares them, highlighting what is similar between both.

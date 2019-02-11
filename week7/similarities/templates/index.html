@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col" style="max-width: 25%">
+        <form class="was-validated" action="/compare" enctype="multipart/form-data" method="post">
+          <div class="form-group" name="algorithm">
+            <select name="algorithm" class="custom-select" required>
+                <option disabled selected>Choose your comparison</option>
+                <option value="lines">lines</option>
+                <option value="sentences">sentences</option>
+                <option value="input">input</option>
+            </select>
+            <div class="invalid-feedback">Choose comparison type</div>
+              </div>
+            
+             <div>
+                <input name="file1" type="file" id="validatedCustomFile" required>
+             </div>
+              
+             <div>
+                <input name="file2" type="file" id="validatedCustomFile" required>
+             </div>
+    
+            <div class="form-group">
+                <label for="length">Substring Length</label>
+                <input type="number" class="form-control" id="length" aria-describedby="substringHelp">
+                <small id="substringHelp" class="form-text text-muted">Enter the size of the substring</small>
+            </div>
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+    </div>
+
+{% endblock %}
