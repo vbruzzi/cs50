@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Task</th>
+          <th scope="col">Due</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for task in tasks  %}
+          <tr name="{{ task[0] }}">
+            <td>{{ task[1] }}</td>
+            <td>{{ task[2] }}</td>
+            <td>
+              <form action="/test" method="POST">
+                <button type="submit"">Remove</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}
