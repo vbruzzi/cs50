@@ -28,7 +28,8 @@ def add():
 def list():
     return render_template("list.html", tasks=read_csv())
     
-@app.route("/test", methods=["POST"])
-def test(self):
-    print(request.form.get(self.id))
-    return "nothing"
+@app.route("/delete", methods=["POST"])
+def delete():
+    taskId = request.form(taskId)
+    print(taskId)
+    return redirect(url_for('list'))
