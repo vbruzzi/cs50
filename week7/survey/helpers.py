@@ -1,9 +1,9 @@
 import csv
 
 def add_csv(task, due, urgent):
-    todo = [task, due, urgent]
-
-    with open('todo.csv', 'a') as csvFile:
+    ## TODO --- ADD ID GENERATION
+    todo = [id, task, due, urgent]
+    with open('todo.csv', 'a', newline='') as csvFile:
         writer = csv.writer(csvFile)
         writer.writerow(todo)
     
@@ -19,3 +19,12 @@ def read_csv():
             
     return todos
             
+
+def delete_line(taskId):
+    todos = read_csv()
+    with open('todo.csv', 'w', newline='') as csvFile:
+        writer = csv.writer(csvFile)
+        for row in todos:
+            if row[0] == taskId:
+                continue
+            writer.writerow(row)
