@@ -1,23 +1,33 @@
 import csv
 from datetime import datetime
+from operator import itemgetter
 
 def add_csv(task, due, urgent):
-    ## TODO --- ADD ID GENERATION
     todo = [1, task, due, urgent]
-    with open('todo.csv', 'a', newline='') as csvFile:
+    with open('todo.csv', 'r+', newline='') as csvFile:
+        lines = csvFile.readlines()
+        #CREATES AN ID IF THERE IS ALREADY A TASK
+        if len(lines) != 0:    
+            lastLine = lines[-1].split(",")
+            todo[0] = int(lastLine[0]) + 1
         writer = csv.writer(csvFile)
         writer.writerow(todo)
-    
     csvFile.close()
     
     
 def read_csv():
     todos = []
+    noturgent = []
     with open('todo.csv', 'r') as csvFile:
         reader = csv.reader(csvFile, delimiter=',')
         for row in reader:
-            todos.append(row)
-            
+            if row[3] == "on":
+                todos.append(row)
+            else:
+                noturgent.append(row)
+
+    for task in noturgent:
+        todos.append(task)    
     return todos
             
 
@@ -29,10 +39,3 @@ def delete_line(taskId):
             if row[0] == taskId:
                 continue
             writer.writerow(row)
-
-def sort_csv():
-    print("YUH")
-    with open('todo.csv', 'a', newline='') as csvFile:
-        reader = csv.reader(csvFile, delimiter=',')
-        sortedData = reader(reader, key=operator.itemgetter(0),reverse=False)
-        print(sortedData)

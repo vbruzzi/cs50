@@ -1,7 +1,7 @@
 import re
 from flask import Flask, abort, redirect, render_template, request, url_for
 
-from helpers import add_csv, read_csv, delete_line, sort_csv
+from helpers import add_csv, read_csv, delete_line
 
 app = Flask(__name__)
 
@@ -27,7 +27,6 @@ def add():
     
 @app.route("/list", methods=["GET"])
 def list():
-    sort_csv()
     return render_template("list.html", tasks=read_csv())
 
 @app.route("/delete", methods=["POST"])
