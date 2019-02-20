@@ -1,7 +1,7 @@
 import re
 from flask import Flask, abort, redirect, render_template, request, url_for
 
-from helpers import add_csv, read_csv, delete_line
+from helpers import add_csv, read_csv, delete_line, sort_csv
 
 app = Flask(__name__)
 
@@ -15,6 +15,7 @@ def index():
 def add():
     task = request.form.get("todo")
     due = request.form.get("date")
+    print(due)
     urgent = request.form.get("urgent")
     if not request.form.get("todo"):
         abort(400, "missing task")
@@ -26,8 +27,10 @@ def add():
     
 @app.route("/list", methods=["GET"])
 def list():
+    sort_csv()
     return render_template("list.html", tasks=read_csv())
 
+@app.route("/delete", methods=["POST"])
 def delete():
     taskId = request.args.get("taskId")
     delete_line(taskId)
